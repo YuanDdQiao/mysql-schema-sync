@@ -19,6 +19,9 @@ mysql表结构自动同步工具
 >如果调试报错Failded to continue:"Cannot find Delve debugger. Install from https://github.com/derekparker/delve & ensure it is in your "GOPATH/bin" or "PATH"
 我们使用go命令行编译调试器
 
+>go get github.com/derekparker/delve/cmd/dlv
+将dlv调试器放在GOPATH(工程目录)的bin目录下
+
 ### 配置
 参考 默认配置文件  config.json 配置同步源、目的地址。  
 修改邮件接收人  当运行失败或者有表结构变化的时候你可以收到邮件通知。  
