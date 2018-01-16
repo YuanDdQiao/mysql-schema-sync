@@ -16,6 +16,8 @@ mysql表结构自动同步工具
 ### 安装
 >go get -u github.com/hidu/mysql-schema-sync
 
+>如果调试报错Failded to continue:"Cannot find Delve debugger. Install from https://github.com/derekparker/delve & ensure it is in your "GOPATH/bin" or "PATH"
+我们使用go命令行编译调试器
 
 ### 配置
 参考 默认配置文件  config.json 配置同步源、目的地址。  
