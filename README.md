@@ -14,12 +14,12 @@ mysql表结构自动同步工具
 
 
 ### 安装
->go get -u github.com/hidu/mysql-schema-sync
+>go get -u github.com/YuanDdQiao/mysql-schema-sync
 
 >如果调试报错Failded to continue:"Cannot find Delve debugger. Install from https://github.com/derekparker/delve & ensure it is in your "GOPATH/bin" or "PATH"
 我们使用go命令行编译调试器
 
->go get github.com/derekparker/delve/cmd/dlv
+go get github.com/derekparker/delve/cmd/dlv
 将dlv调试器放在GOPATH(工程目录)的bin目录下
 
 ### 配置
@@ -32,14 +32,14 @@ mysql表结构自动同步工具
 ```javascript
 {
       //source：同步源
-      "source":"test:test@(127.0.0.1:3306)/test_0",
+      "source":"root:123456@(localhost:3306)/test",
       //dest：待同步的数据库
-      "dest":"test:test@(127.0.0.1:3306)/test_1",
+      "dest":"root:123456@(localhost:3306)/test2",
       //alter_ignore： 同步时忽略的字段和索引
       "alter_ignore":{
         "tb1*":{
-            "column":["aaa","a*"],
-            "index":["aa"],
+            "column":["b*","a*"],
+            "index":[""],
             "foreign":[]
         }
       },
@@ -99,11 +99,11 @@ mysql-schema-sync [-conf] [-dest] [-source] [-sync] [-drop]
   -conf string
         配置文件名称
   -dest string
-        mysql 同步源,eg test@(127.0.0.1:3306)/test_0
+        mysql 同步源,eg username[:password]@(ip:port)/dbname
   -drop
         是否对本地多出的字段和索引进行删除 默认否
   -source string
-        待同步的数据库 eg: test@(10.10.0.1:3306)/test_1
+        待同步的数据库 eg: username[:password]@(ip:port)/dbname
         该项不为空时，忽略读入 -conf参数项
   -sync
         是否将修改同步到数据库中去，默认否

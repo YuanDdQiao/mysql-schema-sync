@@ -1,10 +1,10 @@
 {
-     "source":"test:test@(127.0.0.1:3306)/test",
-     "dest":"test:test@(127.0.0.1:3306)/test_1",
-     "alter_ignore":{
+    "source":"root:123456@(localhost:3306)/test",
+    "dest":"root:123456@(localhost:3306)/test2",
+    "alter_ignore":{
         "tb1*":{
-            "column":["aaa","a*"],
-            "index":["aa"],
+            "column":["b*","a*"],
+            "index":[""],
             "foreign":[]
         }
      },

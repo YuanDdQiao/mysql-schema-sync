@@ -4,8 +4,9 @@ import (
 	"database/sql"
 	"fmt"
 	//load mysql
-	_ "github.com/go-sql-driver/mysql"
 	"log"
+
+	_ "github.com/go-sql-driver/mysql"
 )
 
 // MyDb db struct
